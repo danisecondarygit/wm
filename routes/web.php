@@ -3,10 +3,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AttributeGroupController;
-use App\http\Controllers\CategoryAttributeGroupController;
-use App\http\Controllers\AttributeController;
-use App\http\Controllers\ProductAttributeController;
-use App\http\Controllers\HomeController;
+use App\Http\Controllers\CategoryAttributeGroupController;
+use App\Http\Controllers\AttributeController;
+use App\Http\Controllers\ProductAttributeController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ use App\http\Controllers\HomeController;
 |
 */
 
-Route::group([], function(){
+Route::group(['namespace'=>'App\Http\Controllers'], function(){
     Route::get('', [HomeController::class, 'index'])->name('home');
     Route::group(['prefix'=>'products', 'as'=>'products.'], function(){
      Route::get('', [ProductController::class, 'search_products'])->name('search');
